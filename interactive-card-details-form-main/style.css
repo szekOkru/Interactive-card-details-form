@@ -1,0 +1,292 @@
+:root {
+    --gradient:var(hsl(249, 99%, 64%) to hsl(278, 94%, 30%))
+}
+
+* {
+    margin: 0 0;
+    padding: 0 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 30vw 70vw;
+}
+
+.gradient-background {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.gradient-background img {
+    height: clamp(50%, 100vh, 100%);
+    width: clamp(50%, 30vw, 100%);
+}
+
+.white-bachground {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.white-bachground .grid-container {
+    grid-template-columns: auto;
+}
+
+form {
+    font-size: 20px;
+    display: block;
+}
+
+label {
+    margin-top: 20px;
+    color: hsl(278, 68%, 11%);
+}
+
+input {
+    margin: 5px 0 0 0;
+    width: 30vw;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 10px;
+    border: 2px solid gray;
+}
+.flex-row > label:last-of-type {
+    margin-left: auto;
+}
+
+input[type=button] {
+    margin-top: 40px;
+    background-color: hsl(278, 68%, 11%);
+    color: hsl(0, 0%, 100%);
+    border: none;
+}
+
+input[type=button]:hover {
+    cursor: pointer;
+    opacity: 80%;
+}
+
+input[type=text]:focus {
+    border-width: 6px;
+    border-style: solid;
+    border-image: linear-gradient(to right, #6448fe, #600594) 1;
+    border-radius: inherit;
+}
+
+
+p {
+    color: hsl(0, 100%, 66%);
+}
+
+.short-input {
+    width: 6.5vw;
+}
+
+.medium-input {
+    width: 15vw;
+}
+
+.flex-row {
+    display: flex;
+}
+
+.card-front {
+    position: absolute;
+    top: 15vh;
+    left: 12vw;
+    color: white;
+}
+
+.card-front > img {
+    position: relative;
+}
+
+.preview-card-number, .preview-carholder-name, .preview-month, .circle-full, .circle-empty,  .preview-year, .preview-slash{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.circle-full {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    top: 20px;
+    left: 30px;
+}
+
+.circle-empty {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 2px solid white;
+    top: 30px;
+    left: 100px;
+}
+
+.preview-card-number {
+    top: 150px;
+    left: 60px;
+    font-size: 30px;
+}
+
+.preview-carholder-name {
+    top: 200px;
+    left: 60px;
+}
+
+.preview-month{
+    top: 200px;
+    left: 348px;
+}
+
+.preview-slash{
+    top: 198px;
+    left: 375px;
+}
+
+.preview-year{
+    top: 200px;
+    left: 385px;
+}
+
+.card-back {
+    position: absolute;
+    top: 50vh;
+    left: 18vw; 
+    color: white;
+}
+
+.preview-cvc{
+    position: absolute;
+    top: 109px;
+    left: 350px;
+}
+
+h1 {
+    letter-spacing: 5px;
+    font-weight: 500;
+    color:  hsl(278, 68%, 11%);
+    margin-top: 40px;
+}
+
+.success > p {
+    color: hsl(279, 6%, 55%);
+    margin: 10px 0;
+}
+
+.show {
+    display: none;
+}
+
+.success {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and ( max-width: 1442px ) {
+    .grid-container {
+        grid-template-columns: auto;
+    }
+
+    .gradient-background {
+        height: 40vh;
+    }
+
+    .gradient-background img {
+        height: clamp(50%, 50vh, 100%);
+        width: clamp(50%, 100vw, 100%);
+    }
+
+    .card-front {
+        top: 18vh;
+        left: 25vw;
+        z-index: 1;
+    }
+
+    .card-back {
+        top: 2vh;
+        left: 32vw;
+        z-index: 0;
+    }
+
+    .white-bachground {
+        margin-top: 10vh;
+    }
+
+    input {
+        width: 50vw;
+    }
+
+    .short-input {
+        min-width: 10vw;
+    }
+}
+
+@media screen and ( max-width: 770px ) {
+    .card-front, .card-back {
+        scale: 0.65;
+        left: 0;
+        right: 75vw;
+    }
+
+    .gradient-background {
+        height: 28vh;
+    }
+
+    .gradient-background img {
+        height: clamp(50%, 50vh, 100%);
+        width: clamp(50%, 100vw, 100%);
+    }
+    
+    input {
+        width: 90vw;
+    }
+
+    .card-front {
+        top: 9vh;
+    }
+
+    .card-back {
+        right: 0vw;
+        top: -2vh
+    }
+
+    .short-input {
+        min-width: 20vw;
+    }
+
+    .medium-input {
+        min-width: 30vw;
+    }
+
+    .preview-card-number {
+        width: 380px;
+    }
+
+    .preview-carholder-name {
+        width: 250px;
+    }
+}
+
+@media screen and ( max-width: 322px ) {
+    .card-back {
+        right: 75vw;
+        top: -2vh
+    }
+
+    .medium-input {
+        padding: 10px;
+    }
+}
