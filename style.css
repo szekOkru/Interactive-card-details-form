@@ -195,7 +195,7 @@ h1 {
     align-items: center;
 }
 
-@media screen and ( max-width: 1442px ) {
+@media screen and ( max-width: 1438px ) {
     .grid-container {
         grid-template-columns: auto;
     }
